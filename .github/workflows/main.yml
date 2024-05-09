@@ -14,7 +14,6 @@ jobs:
   build:
     name: Docker login, build, and push GHCR, deploy cotondo
     runs-on: ubuntu-latest
-    container: node:18
 
     steps:
       - uses: actions/checkout@v3
