@@ -21,8 +21,8 @@ jobs:
       - name: Login, Build and push the images
         run: |
           docker login --username ${{secrets.GH_UNAME}} --password ${{secrets.GHCR_PASS}} ghcr.io
-          docker build . --tag ghcr.io/${{secrets.GH_UNAME}}/${{env.REPOSITORY}}/${{env.PROJECT_ID_IMG}}:latest
-          docker push ghcr.io/${{secrets.GH_UNAME}}/${{env.REPOSITORY}}/${{env.PROJECT_ID_IMG}}:latest
+          docker build . --tag ghcr.io/${{secrets.GH_UNAME}}/${{ env.REPOSITORY }}/${{ env.PROJECT_ID_IMG }}:latest
+          docker push ghcr.io/${{secrets.GH_UNAME}}/${{env.REPOSITORY}}/${{ env.PROJECT_ID_IMG }}:latest
 
       - name: Deploy package to server
         uses: appleboy/ssh-action@master
