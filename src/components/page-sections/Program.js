@@ -8,20 +8,21 @@ const Program = ({ items }) => {
     <section className="container text-center sm:mb-40">
       <SectionHeading>My Program</SectionHeading>
       <div className="flex flex-wrap">
-        {items.data.map((cardData, idx) => {
-          return (
-            <div key={`card-${idx}`} className="w-1/2">
-              <Card
-                title={cardData.attributes.title}
-                subTitle={cardData.attributes.subTitle}
-                summary={cardData.attributes.summary}
-                imgSrc={`${config.api}${cardData.attributes.featuredImage.data.attributes.url}`}
-                imgAlt={"feature image"}
-                href={"#"}
-              />
-            </div>
-          );
-        })}
+        {items !== null &&
+          items.data.map((cardData, idx) => {
+            return (
+              <div key={`card-${idx}`} className="w-1/2">
+                <Card
+                  title={cardData.attributes.title}
+                  subTitle={cardData.attributes.subTitle}
+                  summary={cardData.attributes.summary}
+                  imgSrc={`${config.api}${cardData.attributes.featuredImage.data.attributes.url}`}
+                  imgAlt={"feature image"}
+                  href={"#"}
+                />
+              </div>
+            );
+          })}
       </div>
     </section>
   );
