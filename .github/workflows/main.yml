@@ -4,7 +4,7 @@ on:
   push:
     branches:
     - main
-    workflow_dispatch:
+  workflow_dispatch:
     
 env:
   PROJECT_ID_IMG: rama-blog
@@ -20,27 +20,27 @@ jobs:
       - uses: action/checkout@v3
       - name: Login, Build and push the images
         run: |
-          docker login --username ${{secrets.GH_UNAME}} --password ${{secrets.GHCR_PASS}} ghcr.io
-          docker build . --tag ghcr.io/${{secrets.GH_UNAME}}/${{ env.REPOSITORY }}/${{ env.PROJECT_ID_IMG }}:latest
-          docker push ghcr.io/${{secrets.GH_UNAME}}/${{env.REPOSITORY}}/${{ env.PROJECT_ID_IMG }}:latest
+          docker login --username ${{ secrets.GH_UNAME }} --password ${{ secrets.GHCR_PASS }} ghcr.io
+          docker build . --tag ghcr.io/${{ secrets.GH_UNAME }}/${{ env.REPOSITORY }}/${{ env.PROJECT_ID_IMG }}:latest
+          docker push ghcr.io/${{ secrets.GH_UNAME }}/${{ env.REPOSITORY }}/${{ env.PROJECT_ID_IMG }}:latest
 
       - name: Deploy package to server
         uses: appleboy/ssh-action@master
         env:
-          GITHUB_USERNAME: ${{secrets.GH_UNAME}}
-          GITHUB_TOKEN: ${{secrets.GHCR_PASS}}
-          NEXT_PUBLIC_API_TOKEN: ${{secrets.NEXT_PUBLIC_API_TOKEN}}
-          NEXT_PUBLIC_API_URL: ${{secrets.NEXT_PUBLIC_API_URL}}
+          GITHUB_USERNAME: ${{ secrets.GH_UNAME }}
+          GITHUB_TOKEN: ${{ secrets.GHCR_PASS }}
+          NEXT_PUBLIC_API_TOKEN: ${{ secrets.NEXT_PUBLIC_API_TOKEN }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
         with:
-          host: ${{secrets.DEPLOY_HOST}}
-          port: ${{secrets.DEPLOY_PORT}}
-          username: ${{secrets.DEPLOY_USER}}
-          key: ${{secrets.DEPLOY_KEY}}
+          host: ${{ secrets.DEPLOY_HOST }}
+          port: ${{ secrets.DEPLOY_PORT }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}
           envs: GITHUB_USERNAME, GITHUB_TOKEN
           script: |
             docker login ghcr.io -u $GITHUB_USERNAME -p $GITHUB_TOKEN
-            docker pull ghcr.io/$GITHUB_USERNAME/${{env.REPOSITORY}}/${{env.PROJECT_ID_IMG}}:latest
-            docker stop ${{PROJECT_ID_IMG}}
-            docker container rm ${{PROJECT_ID_IMG}}
-            docker image rmi ${{PROJECT_ID_IMG}}
-            docker run --name ${{PROJECT_ID_IMG}} -dit -p 3000:3000 -e NEXT_PUBLIC_API_TOKEN=$NEXT_PUBLIC_API_TOKEN -e NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL ghcr.io/$GITHUB_USERNAME/${{env.REPOSITORY}}/${{env.PROJECT_ID_IMG}}:latest
+            docker pull ghcr.io/$GITHUB_USERNAME/${{ env.REPOSITORY }}/${{ env.PROJECT_ID_IMG }}:latest
+            docker stop ${{ env.PROJECT_ID_IMG }}
+            docker container rm ${{ env.PROJECT_ID_IMG }}
+            docker image rmi ${{ env.PROJECT_ID_IMG }}
+            docker run --name ${{ env.PROJECT_ID_IMG }} -dit -p 3000:3000 -e NEXT_PUBLIC_API_TOKEN=$NEXT_PUBLIC_API_TOKEN -e NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL ghcr.io/$GITHUB_USERNAME/${{ env.REPOSITORY }}/${{ env.PROJECT_ID_IMG }}:latest
