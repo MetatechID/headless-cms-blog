@@ -44,6 +44,3 @@ jobs:
             docker container rm ${{PROJECT_ID_IMG}}
             docker image rmi ${{PROJECT_ID_IMG}}
             docker run --name ${{PROJECT_ID_IMG}} -dit -p 3000:3000 -e NEXT_PUBLIC_API_TOKEN=$NEXT_PUBLIC_API_TOKEN -e NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL ghcr.io/${GITHUB_USERNAME}/${{env.REPOSITORY}}/${{env.PROJECT_ID_IMG}}:latest
-
-    - name: 'Use output'
-        run: 'echo "${{ steps.deploy.outputs.url }}"'
