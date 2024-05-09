@@ -17,7 +17,7 @@ jobs:
     container: node:18
 
     steps:
-      - uses: action/checkout@v3
+      - uses: actions/checkout@v3
       - name: Login, Build and push the images
         run: |
           docker login --username ${{ secrets.GH_UNAME }} --password ${{ secrets.GHCR_PASS }} ghcr.io
