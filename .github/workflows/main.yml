@@ -11,7 +11,7 @@ env:
   REPOSITORY: headless-cms-blog
 
 jobs:
-  build_and_publish:
+  build:
     name: Docker login, build, and push GHCR, deploy cotondo
     run-on: ubuntu-latest
     container: node:18
