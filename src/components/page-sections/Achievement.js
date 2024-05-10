@@ -1,6 +1,5 @@
 "use client";
-import React, { Fragment } from "react";
-import SectionHeading from "../SectionHeading";
+import React from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -10,6 +9,9 @@ import { IconMedal } from "@tabler/icons-react";
 import { useInView } from "react-intersection-observer";
 
 const Achievement = ({ items }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
   return (
     <section
       id="achievement"
@@ -23,9 +25,6 @@ const Achievement = ({ items }) => {
       <VerticalTimeline animate={true} lineColor="">
         {items !== null ? (
           items.data.map((item, idx) => {
-            const { ref, inView } = useInView({
-              triggerOnce: true,
-            });
             return (
               <div
                 key={`achievement-${idx}`}
