@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const key = process.env.NEXT_PUBLIC_API_URL;
-const protocol = "";
-const hostname = "";
+const protocol = "http";
+const hostname = "localhost";
 
 if (key != null) {
   const splitData = key.split(":");
