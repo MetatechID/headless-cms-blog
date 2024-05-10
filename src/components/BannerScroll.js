@@ -2,10 +2,8 @@ import React from "react";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
 import Link from "next/link";
 import config from "@/config";
-import { BackgroundGradientAnimation } from "./ui/background-gradient-animation";
 
 export function BannerScroll({ items }) {
-  //   console.log("data", JSON.stringify(items));
   const images =
     items !== null
       ? `${config.api}${items.data.attributes.images.data.attributes.url}`
@@ -13,11 +11,6 @@ export function BannerScroll({ items }) {
   return (
     <div className="bg-gradient-radial w-full overflow-hidden from-[#D4D4D4] to-[#939393]">
       <MacbookScroll
-        // title={
-        //   <span>
-        //     This Macbook is built with Tailwindcss. <br /> No kidding.
-        //   </span>
-        // }
         badge={
           <Link href="https://peerlist.io/manuarora">
             <Badge className="h-10 w-10 -rotate-12 transform" />
