@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
 const key = process.env.NEXT_PUBLIC_API_URL;
+const protocol = "";
+const hostname = "";
 
-const splitData = key.split(":");
-const protocol = splitData[0];
-const hostname = splitData[1].slice(2);
+if (key != null) {
+  const splitData = key.split(":");
+  protocol = splitData[0];
+  hostname = splitData[1].slice(2);
+}
 
 const nextConfig = {
   output: "standalone",
