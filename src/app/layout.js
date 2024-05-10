@@ -14,7 +14,11 @@ export const metadata = {
 
 const RootLayout = ({ children }) => {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="en"
+      className="scroll-smooth dark:bg-[#EAECF6]"
+      suppressHydrationWarning
+    >
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"

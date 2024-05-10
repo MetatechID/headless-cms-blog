@@ -33,3 +33,15 @@ export const fetchBanner = async () => {
   const res = await req.json();
   return res;
 };
+
+export const fetchData = async (url) => {
+  const req = await fetch(`${config.api}${url}`, reqOptions);
+
+  if (!req.ok) {
+    return null;
+  }
+
+  const res = await req.json();
+  // console.log("res", res);
+  return res;
+};

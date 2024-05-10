@@ -12,7 +12,10 @@ const Navbar = ({ className, menu }) => {
   const [active, setActive] = useState(null);
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+      className={cn(
+        "fixed inset-x-0 top-10 z-50 ml-auto max-w-2xl ",
+        className,
+      )}
     >
       <Menu setActive={setActive}>
         {menu.map((item, idx) => {
@@ -31,7 +34,7 @@ const Navbar = ({ className, menu }) => {
                       return (
                         <div
                           key={`submenu-${subIdx}`}
-                          className="flex flex-col space-y-4 text-sm pb-3"
+                          className="flex flex-col space-y-4 pb-3 text-sm"
                         >
                           <ProductItem
                             title={subItem.title}
@@ -45,7 +48,7 @@ const Navbar = ({ className, menu }) => {
                     return (
                       <div
                         key={`submenu-${subIdx}`}
-                        className="flex flex-col space-y-4 text-sm pb-3"
+                        className="flex flex-col space-y-4 pb-3 text-sm"
                       >
                         <HoveredLink href={subItem.href}>
                           {subItem.name}

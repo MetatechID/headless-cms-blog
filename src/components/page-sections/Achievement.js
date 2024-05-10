@@ -1,34 +1,74 @@
-import React from "react";
+"use client";
+import React, { Fragment } from "react";
 import SectionHeading from "../SectionHeading";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { IconMedal } from "@tabler/icons-react";
+import { useInView } from "react-intersection-observer";
 
-const Achievement = () => {
+const Achievement = ({ items }) => {
   return (
-    <section className="container text-center sm:mb-40">
-      <SectionHeading>Achievement</SectionHeading>
-      <p>
-        Ipsum exercitation aliquip dolor Lorem magna ex ipsum incididunt nisi
-        ullamco laboris aliquip. Officia incididunt sit ipsum magna adipisicing
-        duis mollit irure non ullamco nulla. Quis aliqua mollit exercitation et.
-        Adipisicing dolor proident sunt velit esse aliqua occaecat ullamco
-        nulla. Lorem consequat incididunt qui id ullamco proident.
-      </p>
-      <p>
-        Cillum exercitation quis sint ea incididunt minim. Ea sunt minim anim
-        aliquip ea consequat. Quis minim officia sunt quis enim eu velit nulla
-        veniam exercitation. Culpa anim nostrud et laboris ad velit aliquip eu.
-        Esse ex quis laboris voluptate aliqua cillum officia cupidatat elit
-        voluptate culpa amet ex. Sint dolor aute id magna enim deserunt
-        voluptate qui eu anim eiusmod mollit. Incididunt ullamco sit fugiat do
-        ex id eu reprehenderit Lorem ad culpa.
-      </p>
-      <p>
-        Esse est eiusmod culpa proident do officia commodo consectetur aute
-        eiusmod veniam. Proident voluptate laborum commodo enim non enim et
-        dolor. Commodo occaecat consectetur cupidatat deserunt elit eiusmod enim
-        magna et enim reprehenderit id. Irure elit ad minim anim aliqua et
-        cillum reprehenderit do officia. Magna nostrud ex fugiat est ut mollit
-        labore. Ea fugiat ad enim nulla mollit.
-      </p>
+    <section
+      id="achievement"
+      className="container min-h-[42.75rem] text-center sm:mb-40"
+      style={{
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "contain",
+      }}
+    >
+      <VerticalTimeline animate={true} lineColor="">
+        {items !== null ? (
+          items.data.map((item, idx) => {
+            const { ref, inView } = useInView({
+              triggerOnce: true,
+            });
+            return (
+              <div
+                key={`achievement-${idx}`}
+                ref={ref}
+                className="vertical-timeline-element"
+              >
+                <VerticalTimelineElement
+                  contentStyle={{
+                    backgroundColor: "rgba(89, 90, 95, 0.5)",
+                    boxShadow: "none",
+                    textAlign: "left",
+                    padding: "1.3rem 2rem",
+                    color: "black",
+                  }}
+                  contentArrowStyle={{
+                    borderRight: "0.4rem solid rgba(89, 90, 95, 0.5)",
+                  }}
+                  visible={inView}
+                  icon={<IconMedal stroke={2} />}
+                  iconStyle={{
+                    background: "#fff",
+                    color: "black",
+                    fontSize: "1.5rem",
+                  }}
+                  date={item.attributes.year}
+                >
+                  <h3 className="font-semibold capitalize">
+                    {item.attributes.title}
+                  </h3>
+                  <p className="!mt-0 font-normal">
+                    {item.attributes.location}
+                  </p>
+                  <p className="!mt-1 !font-normal">
+                    {item.attributes.summary}
+                  </p>
+                </VerticalTimelineElement>
+              </div>
+            );
+          })
+        ) : (
+          <div>not found</div>
+        )}
+      </VerticalTimeline>
     </section>
   );
 };

@@ -1,6 +1,5 @@
 export const dynamic = "force-dynamic";
 import React, { Suspense } from "react";
-import SectionDivider from "@/components/SectionDivider";
 // import { ImageBanner } from "@/lib/data";
 
 // import Image from "next/image";
@@ -8,20 +7,24 @@ import About from "@/components/page-sections/About";
 import Program from "@/components/page-sections/Program";
 import MainBanner from "@/components/page-sections/MainBanner";
 import Achievement from "@/components/page-sections/Achievement";
-import { fetchBanner, fetchCard } from "@/utils/fetcher";
+import { fetchBanner, fetchCard, fetchData } from "@/utils/fetcher";
+import { BannerScroll } from "@/components/BannerScroll";
 
 const Home = async () => {
   const cardsData = await fetchCard();
   const imagesMainBanner = await fetchBanner();
+  const profile = await fetchData("/api/profile?populate=*");
+  const achievement = await fetchData("/api/achievements?populate=*");
 
   return (
     <main className="container flex flex-col items-center">
       <Suspense fallback={<>Loading...</>}>
-        <MainBanner items={imagesMainBanner} />
-        <SectionDivider />
-        <About />
+        <BannerScroll items={imagesMainBanner} />
+        {/* <MainBanner items={imagesMainBanner} /> */}
+        {/* <SectionDivider /> */}
+        <About items={profile} />
+        <Achievement items={achievement} />
         <Program items={cardsData} />
-        <Achievement />
       </Suspense>
     </main>
   );
