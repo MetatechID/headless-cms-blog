@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { imageLoader } from "@/utils/imageLoader";
 
 const CardProfile = ({
   title,
@@ -18,6 +19,7 @@ const CardProfile = ({
         <div className="max-w-[35rem] flex-auto">
           <CardItem translateZ="100" className="mt-4">
             <Image
+              loader={imageLoader}
               src={imgSrc}
               height={500}
               width={500}

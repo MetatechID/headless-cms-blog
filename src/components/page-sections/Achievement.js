@@ -7,6 +7,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { IconMedal } from "@tabler/icons-react";
 import { useInView } from "react-intersection-observer";
+import SectionHeading from "../SectionHeading";
 
 const Achievement = ({ items }) => {
   const { ref, inView } = useInView({
@@ -22,6 +23,9 @@ const Achievement = ({ items }) => {
         backgroundSize: "contain",
       }}
     >
+      <SectionHeading>
+        <span className="text-primaryBlueColor text-we">Rama</span> sudah pernah
+      </SectionHeading>
       <VerticalTimeline animate={true} lineColor="">
         {items !== null ? (
           items.data.map((item, idx) => {
