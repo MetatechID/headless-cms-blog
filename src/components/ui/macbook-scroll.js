@@ -25,6 +25,10 @@ import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
 import Image from "next/image";
 
+const imageLoader = ({ src, width, quality }) => {
+  return `${src}?w=${width}&q=${quality || 75}`;
+};
+
 export const MacbookScroll = ({
   src = "",
   showGradient = false,
@@ -155,6 +159,7 @@ export const Lid = ({
       >
         <div className="absolute inset-0 rounded-lg bg-[#272729]" />
         <Image
+          loader={imageLoader}
           src={src || ""}
           alt="banner"
           fill
