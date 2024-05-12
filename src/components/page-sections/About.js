@@ -8,7 +8,7 @@ const About = ({ items = null }) => {
   return (
     <section
       id="profile"
-      className="container mb-28 scroll-mt-28 bg-[url('/triangel-top-left.svg')] bg-local text-center leading-8 sm:mb-40"
+      className="container mb-28 scroll-mt-28 bg-[url('/triangle-top-left.svg')] bg-local text-center leading-8 sm:mb-40"
       style={{ backgroundRepeat: "no-repeat" }}
     >
       {items !== null && (

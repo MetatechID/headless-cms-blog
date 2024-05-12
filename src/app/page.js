@@ -9,12 +9,16 @@ import MainBanner from "@/components/page-sections/MainBanner";
 import Achievement from "@/components/page-sections/Achievement";
 import { fetchBanner, fetchCard, fetchData } from "@/utils/fetcher";
 import { BannerScroll } from "@/components/BannerScroll";
+import Rencana from "@/components/page-sections/Rencana";
 
 const Home = async () => {
   const cardsData = await fetchCard();
   const imagesMainBanner = await fetchBanner();
   const profile = await fetchData("/api/profile?populate=*");
   const achievement = await fetchData("/api/achievements?populate=*");
+  const plan = await fetchData(
+    "/api/plan?populate[leftContent][populate]=icon&populate[rightContent][populate]=icon&populate=mediaContent",
+  );
 
   return (
     <main className="container flex flex-col items-center">
@@ -24,6 +28,7 @@ const Home = async () => {
         {/* <SectionDivider /> */}
         <About items={profile} />
         <Achievement items={achievement} />
+        <Rencana items={plan} />
         <Program items={cardsData} />
       </Suspense>
     </main>

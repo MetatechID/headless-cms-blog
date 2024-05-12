@@ -67,11 +67,11 @@ export const MenuItem = ({
   );
 };
 
-export const Menu = ({ setActive = () => {}, children }) => {
+export const Menu = ({ setActive = () => {}, children, showBackground }) => {
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="boder relative flex justify-center space-x-12 rounded-full border-transparent px-8 py-6 shadow-input dark:border-white/[0.2] dark:bg-[transparent] "
+      className={`boder relative flex justify-end space-x-12 border-transparent px-16 py-6 shadow-input ${showBackground ? "dark:border-white/[0.2] dark:bg-black" : "dark:border-white/[0.2] dark:bg-[transparent]"} `}
     >
       {children}
     </nav>

@@ -2,28 +2,23 @@ import React from "react";
 import Card from "@/components/Card";
 import config from "@/config";
 import SectionHeading from "../SectionHeading";
+import { TabsLayout } from "../TabsLayout";
 
 const Program = ({ items }) => {
   return (
-    <section className="container text-center sm:mb-40">
-      <SectionHeading>My Program</SectionHeading>
-      <div className="flex flex-wrap">
-        {items !== null &&
-          items.data.map((cardData, idx) => {
-            return (
-              <div key={`card-${idx}`} className="w-1/2">
-                <Card
-                  title={cardData.attributes.title}
-                  subTitle={cardData.attributes.subTitle}
-                  summary={cardData.attributes.summary}
-                  imgSrc={`${config.api}${cardData.attributes.featuredImage.data.attributes.url}`}
-                  imgAlt={"feature image"}
-                  href={"#"}
-                />
-              </div>
-            );
-          })}
-      </div>
+    <section
+      id="program"
+      className="container bg-[url(/triangle-top-right.svg)] text-center sm:mb-40"
+      style={{
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "top right",
+      }}
+    >
+      <SectionHeading>
+        <span className="text-primaryBlueColor text-we">Rama</span> punya
+        Program
+      </SectionHeading>
+      <TabsLayout />
     </section>
   );
 };

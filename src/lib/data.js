@@ -11,7 +11,7 @@ export const MenuData = [
     // ],
   },
   {
-    name: "Profile",
+    name: "Siapa Rama ?",
     href: "#profile",
     subMenu: [
       { name: "Hobby", href: "/hobby" },
@@ -24,7 +24,7 @@ export const MenuData = [
     ],
   },
   {
-    name: "Achievement",
+    name: "Pencapaian",
     href: "#Achievement",
     // subMenu: [
     //   { name: "Web Development", href: "/web" },
@@ -33,7 +33,7 @@ export const MenuData = [
     // ],
   },
   {
-    name: "Project",
+    name: "Rencana",
     href: "#project",
     isDetail: true,
     subMenu: [
@@ -44,6 +44,14 @@ export const MenuData = [
         description: "Prepare for tech interviews like never before.",
       },
     ],
+  },
+  {
+    name: "Program Kerja",
+    href: "#programKerja",
+  },
+  {
+    name: "Hubungi Kami",
+    href: "hubungiKami",
   },
 ];
 
