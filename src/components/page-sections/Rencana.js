@@ -19,9 +19,9 @@ const Rencana = ({ items = null }) => {
         backgroundPositionY: "bottom",
       }}
     >
-      <SectionHeading>
-        <span className="text-primaryBlueColor text-we">Rama</span> Punya
-        Rencana
+      <SectionHeading className="mt-5">
+        <span className="text-we text-white">Rama</span>{" "}
+        <span className="text-secondaryBlue">Punya Rencana</span>
       </SectionHeading>
       <div className="text-systemGrey mx-auto justify-center text-center sm:max-w-[40rem]">
         <div className="font-bold capitalize">Visi & Misi</div>
