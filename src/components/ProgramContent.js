@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import ImageLayout from "@/components/ImageLayout";
 import Link from "next/link";
