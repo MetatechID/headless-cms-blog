@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { Tabs } from "@/components/ui/tabs";
 import ProgramContent from "@/components/ProgramContent";
