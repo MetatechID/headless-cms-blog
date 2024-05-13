@@ -4,6 +4,20 @@ import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 import Image from "next/image";
 import { imageLoader } from "@/utils/imageLoader";
+import config from "@/config";
+
+const BlurImage = ({ card }) => {
+  return (
+    <Image
+      src={`${config.api}${card.src}`}
+      height={500}
+      width={500}
+      loader={imageLoader}
+      alt={card.src}
+      priority={true}
+    />
+  );
+};
 
 const ImageLayout = ({ cards }) => {
   return (
@@ -29,16 +43,3 @@ const ImageLayout = ({ cards }) => {
 };
 
 export default ImageLayout;
-
-const BlurImage = ({ card }) => {
-  return (
-    <Image
-      src={card.src}
-      height={500}
-      width={500}
-      loader={imageLoader}
-      alt={card.src}
-      priority={true}
-    />
-  );
-};

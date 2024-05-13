@@ -8,9 +8,13 @@ import config from "@/config";
 export function TabsLayout({ itemTabs }) {
   const tabs = itemTabs.map((item, idx) => {
     let images = item.attributes.imageThumbnails.map((image, idx) => {
+      console.log(
+        "src::",
+        `${config.api}${image.thumbnail.data.attributes.url}`,
+      );
       return {
         alt: image.alt,
-        src: `${config.api}${image.thumbnail.data.attributes.url}`,
+        src: image.thumbnail.data.attributes.url,
         isFeatured: image.isFeatured,
         className: image.isFeatured ? "md:col-span-2" : "col-span-1",
       };
