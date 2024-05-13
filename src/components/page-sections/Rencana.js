@@ -28,8 +28,8 @@ const Rencana = ({ items = null }) => {
 
         <p className="text-base font-normal">{planSummary}</p>
       </div>
-      <div className=" flex items-center justify-center">
-        <div className="flex-1 p-4">
+      <div className=" flex flex-col items-center justify-center sm:flex-row">
+        <div className="flex-1 p-4 ">
           {contentLeft.length > 0 &&
             contentLeft.map((item, idx) => (
               <div
@@ -51,7 +51,7 @@ const Rencana = ({ items = null }) => {
             ))}
         </div>
 
-        <div className="h-auto flex-none p-4 sm:w-[35rem]">
+        <div className="order-first h-auto flex-none p-4 sm:order-none sm:w-[35rem]">
           <img
             src={`${config.api}${mediaContent.data.attributes.url}`}
             alt="Image"

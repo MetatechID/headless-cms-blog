@@ -52,9 +52,10 @@ const Navbar = ({ className, menu }) => {
             fill={true}
             style={{ inset: "0 40px" }}
             className="p-2"
+            alt="logo"
           />
         ) : (
-          <Image width={231} height={129} src={"/logo.svg"} />
+          <Image width={231} height={129} src={"/logo.svg"} alt="logo_2" />
         )}
       </div>
       <div className="flex-auto">

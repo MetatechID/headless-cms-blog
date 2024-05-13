@@ -2,6 +2,7 @@ import React from "react";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
 import Link from "next/link";
 import config from "@/config";
+import { BannerStatic } from "@/components/ui/bannerStatic";
 
 export function BannerScroll({ items }) {
   const images =
@@ -10,7 +11,7 @@ export function BannerScroll({ items }) {
       : [];
   return (
     <div className="bg-gradient-radial w-full overflow-hidden from-[#D4D4D4] to-[#939393]">
-      <MacbookScroll
+      <BannerStatic
         badge={
           <Link href="https://peerlist.io/manuarora">
             <Badge className="h-10 w-10 -rotate-12 transform" />
