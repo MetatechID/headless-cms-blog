@@ -10,7 +10,7 @@ const reqOptions = {
 
 export const fetchCard = async () => {
   const req = await fetch(
-    `${config.api}/api/programs?populate[0]=imageThumbnails.thumbnail`,
+    `${config.api}/api/programs?populate[0]=imageThumbnails.thumbnail&sort=id`,
     reqOptions,
   );
 

@@ -6,12 +6,14 @@ import ProgramContent from "@/components/ProgramContent";
 import config from "@/config";
 
 export function TabsLayout({ itemTabs }) {
+  const configApi = config.api;
   const tabs = itemTabs.map((item, idx) => {
     let images = item.attributes.imageThumbnails.map((image, idx) => {
       console.log(
         "src::",
-        `${config.api}${image.thumbnail.data.attributes.url}`,
+        `${configApi}${image.thumbnail.data.attributes.url}`,
       );
+      console.log("api::", configApi);
       return {
         alt: image.alt,
         src: image.thumbnail.data.attributes.url,
