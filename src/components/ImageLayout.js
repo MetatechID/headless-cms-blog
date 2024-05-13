@@ -13,7 +13,7 @@ const BlurImage = ({ card }) => {
       height={500}
       width={500}
       loader={imageLoader}
-      alt={card.src}
+      alt={card.alt}
       priority={true}
     />
   );
