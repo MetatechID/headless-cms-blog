@@ -11,7 +11,7 @@ const BlurImage = ({ card }) => {
       src={`${config.api}${card.src}`}
       height={500}
       width={500}
-      loader={imageLoader}
+      //   loader={imageLoader}
       alt={card.alt}
       priority={true}
     />
