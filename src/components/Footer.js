@@ -4,8 +4,9 @@ import React from "react";
 const Footer = () => {
   // bg-[url(/footer-shape.svg)]
   // bg-[url(/triangle-blue-left-shape.svg)]
+
   return (
-    <footer>
+    <footer className="max-[628px]:footer">
       <div
         className="z-[50] flex items-baseline justify-between gap-2 bg-[#2B398D] bg-bottom px-5 pb-5 text-xs sm:bg-transparent sm:bg-[url(/footer-shape.svg)] sm:bg-center sm:px-10 lg:min-h-[24rem]"
         style={{

@@ -59,7 +59,7 @@ export const Tabs = ({
               />
             )}
 
-            <span className="dark:text-primaryBlueColor relative block text-black">
+            <span className="dark:text-primaryBlueColor relative block font-bold text-black">
               {tab.title}
             </span>
           </button>

@@ -3,56 +3,38 @@
 import Image from "next/image";
 import { Tabs } from "@/components/ui/tabs";
 import ProgramContent from "@/components/ProgramContent";
+import config from "@/config";
 
-export function TabsLayout() {
-  const tabs = [
-    {
-      title: "#BeraniKolaborasi",
-      value: "beraniKolaborasi",
-      content: <ProgramContent />,
-    },
-    {
-      title: "#BeraniBicara",
-      value: "beraniBicara",
-      content: <ProgramContent />,
-    },
-    {
-      title: "#BeraniBerbagi",
-      value: "beraniBerbagi",
-      content: <ProgramContent />,
-    },
-    {
-      title: "#BeraniTumbuh",
-      value: "beraniTumbuh",
-      content: <ProgramContent />,
-    },
-    {
-      title: "#BeraniSehat",
-      value: "beraniSehat",
-      content: <ProgramContent />,
-    },
-    {
-      title: "#KartiniBerani",
-      value: "karitiniBerani",
-      content: <ProgramContent />,
-    },
-  ];
+export function TabsLayout({ itemTabs }) {
+  const tabs = itemTabs.map((item, idx) => {
+    let images = item.attributes.imageThumbnails.map((image, idx) => {
+      return {
+        alt: image.alt,
+        src: `${config.api}${image.thumbnail.data.attributes.url}`,
+        isFeatured: image.isFeatured,
+        className: image.isFeatured ? "md:col-span-2" : "col-span-1",
+      };
+    });
+
+    return {
+      title: item.attributes.tag,
+      value: item.attributes.tag,
+      content: (
+        <ProgramContent
+          logo={item.attributes.logo}
+          summary={item.attributes.summary}
+          tujuan={item.attributes.tujuan}
+          pencapaian={item.attributes.pencapaian}
+          images={images}
+          slug={item.attributes.slug}
+        />
+      ),
+    };
+  });
 
   return (
-    <div className="b relative mx-auto my-10 flex h-[20rem] w-full max-w-6xl flex-row items-start  justify-start [perspective:1000px] md:h-[40rem]">
+    <div className="relative mx-auto my-10 flex h-[20rem] w-full max-w-6xl flex-col items-start justify-start  [perspective:1000px] sm:flex-row md:h-[40rem]">
       <Tabs tabs={tabs} />
     </div>
   );
 }
-
-const DummyContent = () => {
-  return (
-    <Image
-      src="/linear.webp"
-      alt="dummy image"
-      width="1000"
-      height="1000"
-      className="absolute inset-x-0 -bottom-10  mx-auto h-[60%] w-[90%] rounded-xl object-cover object-left-top md:h-[90%]"
-    />
-  );
-};

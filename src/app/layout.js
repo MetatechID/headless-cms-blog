@@ -19,7 +19,7 @@ const RootLayout = ({ children }) => {
       className="scroll-smooth dark:bg-[#EAECF6]"
       suppressHydrationWarning
     >
-      <body className={inter.className}>
+      <body className={`${inter.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

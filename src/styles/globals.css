@@ -75,6 +75,16 @@
     }
   }
 
+  @layer components {
+    .footer {
+      display: grid;
+      position: fixed;
+      grid-template-rows: auto 1fr auto;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+
 html {
   --line-color: #D8D9DF
 }

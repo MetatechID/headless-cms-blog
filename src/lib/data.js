@@ -13,19 +13,10 @@ export const MenuData = [
   {
     name: "Siapa Rama ?",
     href: "#profile",
-    subMenu: [
-      { name: "Hobby", href: "/hobby" },
-      { name: "Individual", href: "/individual" },
-      { name: "Team", href: "/team" },
-      {
-        name: "Enterprise",
-        href: "/enterprise",
-      },
-    ],
   },
   {
     name: "Pencapaian",
-    href: "#Achievement",
+    href: "#achievement",
     // subMenu: [
     //   { name: "Web Development", href: "/web" },
     //   { name: "Interface Design", href: "/interface" },
@@ -34,20 +25,20 @@ export const MenuData = [
   },
   {
     name: "Rencana",
-    href: "#project",
-    isDetail: true,
-    subMenu: [
-      {
-        title: "Algochurn",
-        href: "https://algochurn.com",
-        src: "/WFH.png",
-        description: "Prepare for tech interviews like never before.",
-      },
-    ],
+    href: "#rencana",
+    // isDetail: true,
+    // subMenu: [
+    //   {
+    //     title: "Algochurn",
+    //     href: "https://algochurn.com",
+    //     src: "/WFH.png",
+    //     description: "Prepare for tech interviews like never before.",
+    //   },
+    // ],
   },
   {
     name: "Program Kerja",
-    href: "#programKerja",
+    href: "#program",
   },
   {
     name: "Hubungi Kami",

@@ -9,7 +9,10 @@ const reqOptions = {
 };
 
 export const fetchCard = async () => {
-  const req = await fetch(`${config.api}/api/programs?populate=*`, reqOptions);
+  const req = await fetch(
+    `${config.api}/api/programs?populate[0]=imageThumbnails.thumbnail`,
+    reqOptions,
+  );
 
   if (!req.ok) {
     return null;
@@ -42,6 +45,6 @@ export const fetchData = async (url) => {
   }
 
   const res = await req.json();
-  // console.log("res", res);
+
   return res;
 };

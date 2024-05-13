@@ -42,15 +42,17 @@ const Navbar = ({ className, menu }) => {
       )}
     >
       <div
-        className={`flex-1  pl-10 ${showBackground ? "bg-black" : "bg-transparent"}`}
+        className={`flex-1 pl-10 ${showBackground ? "bg-black" : "bg-transparent"}`}
       >
         {showBackground ? (
           <Image
             src={"/logo_2.png"}
-            objectFit="contain"
-            objectPosition="left"
             fill={true}
-            style={{ inset: "0 40px" }}
+            style={{
+              inset: "0 40px",
+              objectFit: "contain",
+              objectPosition: "left",
+            }}
             className="p-2"
             alt="logo"
           />

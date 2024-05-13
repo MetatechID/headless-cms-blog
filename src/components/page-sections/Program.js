@@ -4,21 +4,21 @@ import config from "@/config";
 import SectionHeading from "../SectionHeading";
 import { TabsLayout } from "../TabsLayout";
 
-const Program = ({ items }) => {
+const Program = ({ items = null }) => {
+  let conentTabs = items !== null ? items.data : [];
   return (
     <section
       id="program"
-      className="container bg-[url(/triangle-top-right.svg)] text-center sm:mb-40"
+      className="container mb-10 bg-[url(/triangle-top-right.svg)] text-center sm:mb-40"
       style={{
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top right",
       }}
     >
       <SectionHeading>
-        <span className="text-primaryBlueColor text-we">Rama</span> punya
-        Program
+        <span className="text-primaryBlueColor">Rama</span> punya Program
       </SectionHeading>
-      <TabsLayout />
+      <TabsLayout itemTabs={conentTabs} />
     </section>
   );
 };
