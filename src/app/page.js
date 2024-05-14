@@ -10,6 +10,7 @@ import Achievement from "@/components/page-sections/Achievement";
 import { fetchBanner, fetchCard, fetchData } from "@/utils/fetcher";
 import { BannerScroll } from "@/components/BannerScroll";
 import Rencana from "@/components/page-sections/Rencana";
+import Testimony from "@/components/page-sections/Testimony";
 
 const Home = async () => {
   const cardsData = await fetchCard();
@@ -19,6 +20,7 @@ const Home = async () => {
   const plan = await fetchData(
     "/api/plan?populate[leftContent][populate]=icon&populate[rightContent][populate]=icon&populate=mediaContent",
   );
+  const testimonies = await fetchData("/api/testimonies?populate=*");
 
   return (
     <main className="container flex flex-col items-center">
@@ -30,6 +32,7 @@ const Home = async () => {
         <Achievement items={achievement} />
         <Rencana items={plan} />
         <Program items={cardsData} />
+        <Testimony items={testimonies} />
       </Suspense>
     </main>
   );

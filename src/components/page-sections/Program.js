@@ -36,7 +36,7 @@ const Program = ({ items = null }) => {
   return (
     <section
       id="program"
-      className="container mb-10 bg-[url(/triangle-top-right.svg)] text-center sm:mb-40"
+      className="container mb-28 bg-[url(/triangle-top-right.svg)] text-center sm:mb-40"
       style={{
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top right",

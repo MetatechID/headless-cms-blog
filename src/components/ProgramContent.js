@@ -12,8 +12,9 @@ const ProgramContent = ({
   slug,
 }) => {
   return (
+    // max-w-[10rem]
     <div className="bg-systemBackground shadow-black-500/50 relative flex rounded-2xl p-10 text-sm font-bold text-[#000] shadow-lg sm:h-full sm:w-full sm:overflow-hidden md:text-sm">
-      <div className="flex max-w-[10rem] flex-1 flex-col gap-10 break-words text-left font-normal leading-6 sm:w-64 sm:max-w-[16rem]">
+      <div className="flex flex-1 flex-col gap-10 break-words text-left font-normal leading-6 sm:w-64 sm:max-w-[16rem]">
         <div>
           <h5>Logo</h5>
           {logo}
