@@ -84,7 +84,7 @@ export const CardTitle = ({ className, title, tag }) => {
       <h4 className="text-primaryBlueColor text-lg font-bold capitalize tracking-wide">
         {title}
       </h4>
-      <p className="text-sm font-normal text-[#7C7D83] ">{tag}</p>
+      <p className="text-greyDark text-sm font-normal ">{tag}</p>
     </div>
   );
 };
