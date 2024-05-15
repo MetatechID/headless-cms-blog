@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -67,14 +67,23 @@ export const MenuItem = ({
   );
 };
 
-export const Menu = ({ setActive = () => {}, children, showBackground }) => {
+export const Menu = ({
+  setActive = () => {},
+  children,
+  showBackground,
+  isOpen,
+}) => {
+  const containerRef = useRef(null);
   return (
-    <nav
+    <motion.nav
+      initial={false}
+      animate={isOpen ? "open" : "closed"}
+      ref={containerRef}
       onMouseLeave={() => setActive(null)} // resets the state
-      className={`boder relative flex justify-end space-x-12 border-transparent px-16 py-6 shadow-input ${showBackground ? "dark:border-white/[0.2] dark:bg-black" : "dark:border-white/[0.2] dark:bg-[transparent]"} `}
+      className={`boder border-transparent shadow-input sm:px-16 ${showBackground ? "dark:border-white/[0.2] dark:bg-black" : "dark:border-white/[0.2] dark:bg-[transparent]"} `}
     >
       {children}
-    </nav>
+    </motion.nav>
   );
 };
 
