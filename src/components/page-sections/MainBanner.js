@@ -1,6 +1,6 @@
 import React from "react";
-import AccordionImage from "@/components/AccordionImage";
 import config from "@/config";
+import Carousel from "@/components/Carousel";
 
 const MainBanner = ({ items }) => {
   const images =
@@ -10,9 +10,9 @@ const MainBanner = ({ items }) => {
         })
       : [];
   return (
-    <section id="home" className="scroll-mt-28">
+    <section id="home" className="w-full scroll-mt-28">
       {images.length > 0 ? (
-        <AccordionImage title={items.data.attributes.title} images={images} />
+        <Carousel title={items.data.attributes.title} images={images} />
       ) : null}
     </section>
   );

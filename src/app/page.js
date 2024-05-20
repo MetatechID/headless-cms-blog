@@ -25,8 +25,8 @@ const Home = async () => {
   return (
     <main className="container flex flex-col items-center">
       <Suspense fallback={<>Loading...</>}>
-        <BannerScroll items={imagesMainBanner} />
-        {/* <MainBanner items={imagesMainBanner} /> */}
+        {/* <BannerScroll items={imagesMainBanner} /> */}
+        <MainBanner items={imagesMainBanner} />
         {/* <SectionDivider /> */}
         <About items={profile} />
         <Achievement items={achievement} />

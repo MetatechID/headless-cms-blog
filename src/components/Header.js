@@ -1,6 +1,5 @@
 import { MenuData } from "@/lib/data";
 import Navbar from "./navbar";
-import Image from "next/image";
 
 const Header = () => {
   return (

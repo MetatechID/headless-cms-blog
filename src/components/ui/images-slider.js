@@ -18,13 +18,13 @@ export const ImagesSlider = ({
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex + 1 === images.length ? 0 : prevIndex + 1
+      prevIndex + 1 === images.length ? 0 : prevIndex + 1,
     );
   };
 
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
+      prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1,
     );
   };
 
@@ -112,7 +112,7 @@ export const ImagesSlider = ({
     <div
       className={cn(
         "relative flex h-full w-full items-center justify-center overflow-hidden",
-        className
+        className,
       )}
       style={{
         perspective: "1000px",
@@ -134,7 +134,8 @@ export const ImagesSlider = ({
             animate="visible"
             exit={direction === "up" ? "upExit" : "downExit"}
             variants={slideVariants}
-            className="image absolute inset-0 h-full w-full object-cover object-center"
+            className="image absolute inset-0 aspect-video h-full w-full object-fill object-center"
+            alt="rama-banner"
           />
         </AnimatePresence>
       )}

@@ -22,15 +22,15 @@ const Footer = () => {
           className="flex flex-auto flex-col items-center justify-center self-center sm:mt-20"
         >
           <div className="w-[40%] sm:w-[16.6875rem]">
-            <Image src="/logo.svg" width={287} height={161} />
+            <Image src="/logo.svg" width={287} height={161} alt="logo" />
           </div>
           <Link href={"#"}>
-            <button className=" bg-primaryBlueColor w-39 flex flex-row items-center justify-center gap-3 rounded-lg px-8 py-2 text-sm font-normal text-white transition duration-200 hover:shadow-xl focus:ring-2 focus:ring-blue-400">
+            <button className=" w-39 flex flex-row items-center justify-center gap-3 rounded-lg bg-primaryBlueColor px-8 py-2 text-sm font-normal text-white transition duration-200 hover:shadow-xl focus:ring-2 focus:ring-blue-400">
               <img src="/wa.svg" />
               Sahabat Rama
             </button>
           </Link>
-          <p className="text-greyDark text-sm">
+          <p className="text-sm text-greyDark">
             Kritik & saran bisa hubungi nomer ini
           </p>
         </div>
