@@ -7,10 +7,13 @@ import CardProfile from "@/components/CardProfile";
 const About = ({ items = null }) => {
   return (
     <section
-      id="profile"
+      id="tentangRama"
       className="container mb-28 scroll-mt-28 bg-[url('/triangle-top-left.svg')] bg-local text-center leading-8 sm:mb-40"
       style={{ backgroundRepeat: "no-repeat" }}
     >
+      <SectionHeading className="mt-10">
+        Tentang <span className="text-primaryBlueColor">Rama</span>
+      </SectionHeading>
       {items !== null && (
         <CardProfile
           title={items.data.attributes.title}

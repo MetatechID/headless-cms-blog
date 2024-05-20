@@ -20,10 +20,10 @@ const Rencana = ({ items = null }) => {
       }}
     >
       <SectionHeading className="mt-5">
-        <span className="text-we text-white">Rama</span>{" "}
-        <span className="text-secondaryBlue">Punya Rencana</span>
+        <span className="text-secondaryBlue">Rencana</span>{" "}
+        <span className="text-white">Rama</span>
       </SectionHeading>
-      <div className="text-systemGrey mx-auto justify-center text-center sm:max-w-[40rem]">
+      <div className="mx-auto justify-center text-center text-systemGrey sm:max-w-[40rem]">
         <div className="font-bold capitalize">Visi & Misi</div>
 
         <p className="text-base font-normal">{planSummary}</p>

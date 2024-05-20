@@ -44,7 +44,7 @@ const Navbar = ({ className, menu }) => {
         className={`flex flex-col sm:flex-row ${isOpen ? "flex-col" : ""} items-center justify-between`}
       >
         <div
-          className={`flex-shrink-0 sm:w-[14.4375rem] ${showBackground ? "relative hidden bg-black sm:flex" : "hidden h-20 bg-transparent sm:flex sm:h-[8.0625rem]"}`}
+          className={`flex-shrink-0  sm:w-[14.4375rem] ${showBackground ? "relative hidden bg-black sm:flex" : "hidden h-20 bg-transparent sm:flex sm:h-[8.0625rem]"}`}
         >
           {showBackground ? (
             <Image

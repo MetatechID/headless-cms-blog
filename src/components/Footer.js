@@ -7,7 +7,7 @@ const Footer = () => {
     // className="max-[628px]:footer"
     <footer>
       <div
-        className="z-[50] flex flex-row items-baseline gap-2 bg-[#2B398D] bg-bottom px-5 pb-5 text-xs sm:bg-transparent sm:bg-[url(/footer-shape.svg)] sm:bg-center sm:px-10 lg:min-h-[24rem]"
+        className="z-[50] flex flex-col items-baseline gap-2 bg-[#2B398D] bg-bottom px-5 pb-5 text-xs sm:flex-row sm:bg-transparent sm:bg-[url(/footer-shape.svg)] sm:bg-center sm:px-10 lg:min-h-[24rem]"
         style={{
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
         <div
           id="middlediv"
-          className="flex flex-auto flex-col items-center justify-center self-center sm:mt-20"
+          className="order-first flex flex-auto flex-col items-center justify-center self-center sm:order-none sm:mt-20"
         >
           <div className="w-[40%] sm:w-[16.6875rem]">
             <Image src="/logo.svg" width={287} height={161} alt="logo" />

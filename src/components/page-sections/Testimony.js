@@ -20,10 +20,12 @@ const Testimony = ({ items = null }) => {
   return (
     <section
       id="testimony"
-      className="container mb-28 scroll-mt-28 bg-local text-center leading-8 sm:mb-40"
+      className="container mb-28 mt-20 scroll-mt-28 bg-local text-center leading-8 sm:mb-40"
     >
       <SectionHeading>
         Kata orang, <span className="text-primaryBlueColor">Rama</span> itu...
+        <br />
+        <p className="text-base font-normal">Kata - kata sahabat rama</p>
       </SectionHeading>
       <UserCard items={projects} />
     </section>

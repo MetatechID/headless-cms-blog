@@ -13,7 +13,7 @@ const ProgramContent = ({
 }) => {
   return (
     // max-w-[10rem]
-    <div className="bg-systemBackground shadow-black-500/50 relative flex rounded-2xl p-10 text-sm font-bold text-[#000] shadow-lg sm:h-full sm:w-full sm:overflow-hidden md:text-sm">
+    <div className="shadow-black-500/50 relative flex flex-col gap-4 rounded-2xl bg-systemBackground p-10 text-sm font-bold text-[#000] shadow-lg sm:h-full sm:w-full sm:flex-row sm:overflow-hidden md:text-sm">
       <div className="flex flex-1 flex-col gap-10 break-words text-left font-normal leading-6 sm:w-64 sm:max-w-[16rem]">
         <div>
           <h5>Logo</h5>
@@ -36,7 +36,7 @@ const ProgramContent = ({
         <ImageLayout cards={images} />
         <div className="mb-4 flex justify-end">
           <Link href={`/${slug}`}>
-            <button className=" bg-primaryBlueColor rounded-full px-8 py-2 text-sm font-normal text-white transition duration-200 hover:shadow-xl focus:ring-2 focus:ring-blue-400">
+            <button className=" rounded-full bg-primaryBlueColor px-8 py-2 text-sm font-normal text-white transition duration-200 hover:shadow-xl focus:ring-2 focus:ring-blue-400">
               Lihat Selengkapnya
             </button>
           </Link>
