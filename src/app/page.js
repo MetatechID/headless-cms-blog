@@ -11,6 +11,7 @@ import { fetchBanner, fetchCard, fetchData } from "@/utils/fetcher";
 import { BannerScroll } from "@/components/BannerScroll";
 import Rencana from "@/components/page-sections/Rencana";
 import Testimony from "@/components/page-sections/Testimony";
+import WelcomeMsg from "@/components/WelcomeMsg";
 
 const Home = async () => {
   const cardsData = await fetchCard();
@@ -27,6 +28,7 @@ const Home = async () => {
       <Suspense fallback={<>Loading...</>}>
         {/* <BannerScroll items={imagesMainBanner} /> */}
         <MainBanner items={imagesMainBanner} />
+        <WelcomeMsg />
         {/* <SectionDivider /> */}
         <About items={profile} />
         <Achievement items={achievement} />

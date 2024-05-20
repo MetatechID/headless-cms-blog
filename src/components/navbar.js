@@ -52,10 +52,10 @@ const Navbar = ({ className, menu }) => {
               width={116}
               height={80}
               className="py-3"
-              alt="logo"
+              alt="logo_2"
             />
           ) : (
-            <Image width={231} height={129} src={"/logo.svg"} alt="logo_2" />
+            <Image width={231} height={129} src={"/logo.svg"} alt="logo" />
           )}
         </div>
         <div className="block self-end p-3 sm:hidden">

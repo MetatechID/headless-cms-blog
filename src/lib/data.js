@@ -11,30 +11,16 @@ export const MenuData = [
     // ],
   },
   {
-    name: "Siapa Rama ?",
-    href: "#profile",
+    name: "Tentang Rama",
+    href: "#tentangRama",
   },
   {
     name: "Pencapaian",
     href: "#achievement",
-    // subMenu: [
-    //   { name: "Web Development", href: "/web" },
-    //   { name: "Interface Design", href: "/interface" },
-    //   { name: "Branding", href: "/branding" },
-    // ],
   },
   {
     name: "Rencana",
     href: "#rencana",
-    // isDetail: true,
-    // subMenu: [
-    //   {
-    //     title: "Algochurn",
-    //     href: "https://algochurn.com",
-    //     src: "/WFH.png",
-    //     description: "Prepare for tech interviews like never before.",
-    //   },
-    // ],
   },
   {
     name: "Program Kerja",
