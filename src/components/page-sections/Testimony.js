@@ -27,7 +27,7 @@ const Testimony = ({ items = null }) => {
         <br />
         <p className="text-base font-normal">Kata - kata sahabat rama</p>
       </SectionHeading>
-      <UserCard items={projects} />
+      <UserCard className={"mx-28"} items={projects} />
     </section>
   );
 };

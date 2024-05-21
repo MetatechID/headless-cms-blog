@@ -48,3 +48,19 @@ export const fetchData = async (url) => {
 
   return res;
 };
+
+export const fetchIgData = async () => {
+  const token = process.env.NEXT_PUBLIC_IG_TOKEN;
+  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink,timestamp&access_token=${token}`;
+
+  let images = [];
+  try {
+    const res = await fetch(url);
+    const resData = await res.json();
+
+    return resData;
+  } catch (err) {
+    // throw an error if login to Instagram fails
+    console.log("Something went wrong while logging into Instagram", err);
+  }
+};

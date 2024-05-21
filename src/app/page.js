@@ -1,17 +1,19 @@
 export const dynamic = "force-dynamic";
 import React, { Suspense } from "react";
-// import { ImageBanner } from "@/lib/data";
-
-// import Image from "next/image";
 import About from "@/components/page-sections/About";
 import Program from "@/components/page-sections/Program";
 import MainBanner from "@/components/page-sections/MainBanner";
 import Achievement from "@/components/page-sections/Achievement";
-import { fetchBanner, fetchCard, fetchData } from "@/utils/fetcher";
-import { BannerScroll } from "@/components/BannerScroll";
+import {
+  fetchBanner,
+  fetchCard,
+  fetchData,
+  fetchIgData,
+} from "@/utils/fetcher";
 import Rencana from "@/components/page-sections/Rencana";
 import Testimony from "@/components/page-sections/Testimony";
 import WelcomeMsg from "@/components/WelcomeMsg";
+import InstagramFeed from "@/components/page-sections/InstagramFeed";
 
 const Home = async () => {
   const cardsData = await fetchCard();
@@ -22,11 +24,11 @@ const Home = async () => {
     "/api/plan?populate[leftContent][populate]=icon&populate[rightContent][populate]=icon&populate=mediaContent",
   );
   const testimonies = await fetchData("/api/testimonies?populate=*");
+  const igData = await fetchIgData();
 
   return (
     <main className="container flex flex-col items-center">
       <Suspense fallback={<>Loading...</>}>
-        {/* <BannerScroll items={imagesMainBanner} /> */}
         <MainBanner items={imagesMainBanner} />
         <WelcomeMsg />
         {/* <SectionDivider /> */}
@@ -34,6 +36,7 @@ const Home = async () => {
         <Achievement items={achievement} />
         <Rencana items={plan} />
         <Program items={cardsData} />
+        <InstagramFeed items={igData} />
         <Testimony items={testimonies} />
       </Suspense>
     </main>
