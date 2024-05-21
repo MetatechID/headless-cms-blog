@@ -12,7 +12,7 @@ const Rencana = ({ items = null }) => {
   return (
     <section
       id="rencana"
-      className="container mb-28 scroll-mt-28 bg-[url('/rencana-bg.svg')] bg-local  text-center leading-8 sm:mb-40 sm:min-h-[42.75rem]"
+      className="container mx-5 mb-28 scroll-mt-28 bg-[url('/rencana-bg.svg')] bg-local text-center  leading-8 sm:mx-0 sm:mb-40 sm:min-h-[42.75rem]"
       style={{
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
