@@ -57,6 +57,10 @@ export const fetchIgData = async () => {
   try {
     const res = await fetch(url);
     const resData = await res.json();
+    console.log("ig res", resData);
+    if (!res.ok) {
+      return null;
+    }
 
     return resData;
   } catch (err) {
