@@ -109,36 +109,62 @@ export const ImagesSlider = ({
   const areImagesLoaded = loadedImages.length > 0;
 
   return (
-    <div
-      className={cn(
-        "relative flex h-full w-full items-center justify-center overflow-hidden",
-        className,
-      )}
-      style={{
-        perspective: "1000px",
-      }}
-    >
-      {areImagesLoaded && children}
-      {areImagesLoaded && overlay && (
-        <div
-          className={cn("absolute inset-0 z-40 bg-black/60", overlayClassName)}
-        />
-      )}
-
-      {areImagesLoaded && (
-        <AnimatePresence>
-          <motion.img
-            key={currentIndex}
-            src={loadedImages[currentIndex]}
-            initial="initial"
-            animate="visible"
-            exit={direction === "up" ? "upExit" : "downExit"}
-            variants={slideVariants}
-            className="image absolute inset-0 aspect-video h-full w-full object-fill object-center"
-            alt="rama-banner"
+    <>
+      <div
+        className={cn(
+          "relative mx-auto mb-5 flex items-center justify-center overflow-hidden bg-blend-color sm:mt-32 sm:w-[54.5rem]",
+          className,
+        )}
+        style={{
+          perspective: "1000px",
+        }}
+      >
+        {areImagesLoaded && children}
+        {areImagesLoaded && overlay && (
+          <div
+            className={cn(
+              "absolute inset-0 z-40 bg-black/60",
+              overlayClassName,
+            )}
           />
-        </AnimatePresence>
-      )}
+        )}
+
+        {areImagesLoaded && (
+          <AnimatePresence>
+            <motion.img
+              key={currentIndex}
+              src={loadedImages[currentIndex]}
+              initial="initial"
+              animate="visible"
+              exit={direction === "up" ? "upExit" : "downExit"}
+              variants={slideVariants}
+              className="image absolute inset-0 aspect-square h-auto w-full object-contain sm:object-top"
+              alt="rama-banner"
+            />
+          </AnimatePresence>
+        )}
+      </div>
+      <DotButton
+        imgs={loadedImages}
+        imgIndex={currentIndex}
+        setImgIndex={setCurrentIndex}
+      />
+    </>
+  );
+};
+
+export const DotButton = ({ imgs, imgIndex, setImgIndex }) => {
+  return (
+    <div className="m-4 mx-auto flex w-max justify-center gap-2 rounded-full bg-black/30 px-3 py-2 sm:m-10 sm:-mt-[2.8125rem] sm:justify-start">
+      {imgs.map((_, idx) => {
+        return (
+          <button
+            key={idx}
+            onClick={() => setImgIndex(idx)}
+            className={`h-3 w-3 rounded-full transition-colors ${idx === imgIndex ? "bg-[#D81D09]" : "bg-systemGrey"}`}
+          />
+        );
+      })}
     </div>
   );
 };

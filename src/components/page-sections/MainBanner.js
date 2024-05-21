@@ -10,7 +10,11 @@ const MainBanner = ({ items }) => {
         })
       : [];
   return (
-    <section id="home" className="w-full scroll-mt-28">
+    // <section id="home" className="w-full scroll-mt-28">
+    <section
+      id="home"
+      className="h-full w-full overflow-hidden bg-gradient-radial from-[#D4D4D4] to-[#939393]"
+    >
       {images.length > 0 ? (
         <Carousel title={items.data.attributes.title} images={images} />
       ) : null}
