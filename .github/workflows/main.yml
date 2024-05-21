@@ -30,6 +30,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GHCR_PASS }}
           NEXT_PUBLIC_API_TOKEN: ${{ secrets.NEXT_PUBLIC_API_TOKEN }}
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_IG_TOKEN: ${{ secrets.NEXT_PUBLIC_IG_TOKEN }}
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           port: ${{ secrets.DEPLOY_PORT }}
@@ -41,4 +42,4 @@ jobs:
             docker pull ghcr.io/$GITHUB_USERNAME/${{ env.REPOSITORY }}/${{ env.PROJECT_ID_IMG }}:latest
             docker stop ${{ env.PROJECT_ID_IMG }}
             docker system prune -f
-            docker run --name ${{ env.PROJECT_ID_IMG }} -dit -p 3000:3000 -e NEXT_PUBLIC_API_TOKEN=$NEXT_PUBLIC_API_TOKEN -e NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL ghcr.io/$GITHUB_USERNAME/${{ env.REPOSITORY }}/${{ env.PROJECT_ID_IMG }}:latest
+            docker run --name ${{ env.PROJECT_ID_IMG }} -dit -p 3000:3000 -e NEXT_PUBLIC_API_TOKEN=$NEXT_PUBLIC_API_TOKEN -e NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL -e NEXT_PUBLIC_IG_TOKEN=$NEXT_PUBLIC_IG_TOKEN ghcr.io/$GITHUB_USERNAME/${{ env.REPOSITORY }}/${{ env.PROJECT_ID_IMG }}:latest
