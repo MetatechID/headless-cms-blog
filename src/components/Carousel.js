@@ -6,7 +6,7 @@ import { ImagesSlider } from "@/components/ui/images-slider";
 const Carousel = ({ title, images }) => {
   return (
     <ImagesSlider
-      className="h-auto min-h-[25rem] sm:min-h-[40rem] "
+      className="h-auto min-h-[23rem] sm:min-h-[40rem] "
       images={images}
       overlay={false}
     >

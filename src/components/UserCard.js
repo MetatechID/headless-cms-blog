@@ -26,8 +26,7 @@ export const UserCard = ({ items, className }) => {
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="dark:bg-palleteGreyLight/[0.8] absolute inset-0 block h-full w-full rounded-lg  bg-neutral-200"
-                // rounded-3xl
+                className="absolute inset-0 block h-full w-full rounded-lg bg-neutral-200  dark:bg-palleteGreyLight/[0.8]"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -45,8 +44,8 @@ export const UserCard = ({ items, className }) => {
             <CardDescription className="p-4 text-left text-base font-normal">
               {item.message}
             </CardDescription>
-            {/* bg-palleteGreyLight */}
-            <CardFooter className=" bg-palleteGreyLight flex flex-row gap-4 border-0 px-[1rem] py-[0.875rem]">
+
+            <CardFooter className=" flex flex-row gap-4 border-0 bg-palleteGreyLight px-[1rem] py-[0.875rem]">
               <CardImage
                 className="flex-none"
                 imgSrc={item.src}
@@ -70,7 +69,6 @@ export const Card = ({ className, children }) => {
     <div
       className={cn(
         "relative z-20 h-full w-full overflow-hidden rounded-2xl border-transparent bg-white group-hover:border-slate-700",
-        // border dark:border-white/[0.2] bg-black
         className,
       )}
     >
@@ -81,10 +79,10 @@ export const Card = ({ className, children }) => {
 export const CardTitle = ({ className, title, tag }) => {
   return (
     <div className={className}>
-      <h4 className="text-primaryBlueColor text-lg font-bold capitalize tracking-wide">
+      <h4 className="text-lg font-bold capitalize tracking-wide text-primaryBlueColor">
         {title}
       </h4>
-      <p className="text-greyDark text-sm font-normal ">{tag}</p>
+      <p className="text-sm font-normal text-greyDark ">{tag}</p>
     </div>
   );
 };
@@ -106,6 +104,7 @@ export const CardImage = ({ imgSrc, alt }) => {
         src={imgSrc}
         alt={alt}
         fill={true}
+        sizes="30rem"
         loader={imageLoader}
         className="aspect-square rounded-full object-cover"
       />
