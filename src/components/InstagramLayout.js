@@ -3,7 +3,7 @@ import React from "react";
 
 const Instagramlayout = ({ items }) => {
   return (
-    <div className="mx-5 mt-20 sm:mx-28">
+    <div className="mx-5 sm:mx-28">
       <div className="mx-auto grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
         {items !== null
           ? items.data.map((item, idx) => {

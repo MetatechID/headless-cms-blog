@@ -28,7 +28,7 @@ export const Tabs = ({
     <>
       <div
         className={cn(
-          "no-visible-scrollbar relative flex max-w-full flex-none flex-row flex-wrap items-start justify-start gap-3 overflow-auto pb-10 [perspective:1000px] sm:min-w-[12.375rem] sm:flex-col sm:overflow-visible",
+          "no-visible-scrollbar relative flex max-w-full items-start justify-start gap-3 overflow-auto pb-3 [perspective:1000px] sm:min-w-[12.375rem] sm:flex-col sm:overflow-visible sm:pb-10",
           containerClassName,
         )}
       >
@@ -41,7 +41,7 @@ export const Tabs = ({
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
             className={cn(
-              "bg-palleteGreyLight relative rounded-full px-4 py-2",
+              "relative rounded-full bg-palleteGreyLight px-4 py-2",
               tabClassName,
             )}
             style={{
@@ -53,13 +53,13 @@ export const Tabs = ({
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  "bg-secondaryBlue absolute inset-0 rounded-full ",
+                  "absolute inset-0 rounded-full bg-secondaryBlue ",
                   activeTabClassName,
                 )}
               />
             )}
 
-            <span className="dark:text-primaryBlueColor relative block font-bold text-black">
+            <span className="relative block font-bold text-black dark:text-primaryBlueColor">
               {tab.title}
             </span>
           </button>

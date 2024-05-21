@@ -12,23 +12,23 @@ const ProgramContent = ({
   slug,
 }) => {
   return (
-    // max-w-[10rem]
-    <div className="shadow-black-500/50 relative flex flex-col gap-4 rounded-2xl bg-systemBackground p-10 text-sm font-bold text-[#000] shadow-lg sm:h-full sm:w-full sm:flex-row sm:overflow-hidden md:text-sm">
-      <div className="flex flex-1 flex-col gap-10 break-words text-left font-normal leading-6 sm:w-64 sm:max-w-[16rem]">
-        <div>
+    //
+    <div className="shadow-black-500/50 relative m-4 flex flex-wrap gap-4 rounded-2xl bg-systemBackground p-6 text-left text-sm font-normal leading-6 text-[#000] shadow-lg sm:m-0 sm:h-full sm:w-full sm:flex-row sm:gap-0 sm:overflow-hidden md:text-sm">
+      <div className="flex-0 relative flex flex-row flex-wrap gap-3 break-words text-left font-normal leading-6 sm:w-64 sm:max-w-[16rem] sm:flex-col">
+        {/* <div>
           <h5>Logo</h5>
           {logo}
-        </div>
+        </div> */}
         <div>
-          <h5>Descripsi Program</h5>
+          <h5 className="font-bold">Descripsi Program</h5>
           <p>{summary}</p>
         </div>
         <div>
-          <h5>Tujuan</h5>
+          <h5 className="font-bold">Tujuan</h5>
           {tujuan}
         </div>
         <div>
-          <h5>Pencapaian</h5>
+          <h5 className="font-bold">Indikator Keberhasilan</h5>
           {pencapaian}
         </div>
       </div>

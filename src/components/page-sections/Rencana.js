@@ -53,7 +53,7 @@ const Rencana = ({ items = null }) => {
 
         <div className="order-first h-auto flex-none p-4 sm:order-none sm:w-[35rem]">
           <img
-            src={`${config.api}${mediaContent.data.attributes.url}`}
+            src={`${config.api}${mediaContent?.data?.attributes.url}`}
             alt="Image"
             className="h-auto max-w-full"
           />

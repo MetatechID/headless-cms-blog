@@ -10,7 +10,7 @@ const InstagramFeed = ({ items }) => {
         <div>
           ikuti <span className="text-primaryBlueColor">Rama</span>
         </div>
-        <div className="mr-28">
+        <div className="mr-4 sm:mr-28">
           <button
             onClick={(e) => {
               window.open(

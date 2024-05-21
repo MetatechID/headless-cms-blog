@@ -23,7 +23,7 @@ const ImageLayout = ({ cards }) => {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      className="relative mx-auto grid w-full max-w-7xl grid-cols-2  gap-4 px-10 pb-10 md:grid-cols-3"
+      className="relative mx-auto grid w-full max-w-7xl grid-cols-2  gap-4 px-10 pb-10 sm:px-0 md:grid-cols-3"
     >
       {cards.map((card, i) => (
         <motion.div key={i} className={cn(card.className, "")}>
