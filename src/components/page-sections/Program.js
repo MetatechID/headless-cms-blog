@@ -11,7 +11,7 @@ const Program = ({ items = null }) => {
     let images = item.attributes.imageThumbnails.map((image, idx) => {
       return {
         alt: image.alt,
-        src: `${config.api}${image.thumbnail.data.attributes.url}`,
+        src: `${config.api}${image.thumbnail.data ? image.thumbnail.data.attributes.url : "#"}`,
         isFeatured: image.isFeatured,
         className: image.isFeatured ? "md:col-span-2" : "col-span-1",
       };
