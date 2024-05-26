@@ -19,11 +19,11 @@ const ProgramContent = ({
         <ImageLayout cards={images} />
       </div>
       <div className="flex flex-col flex-wrap sm:flex-row">
-        <div className="mb-5 w-3/5 break-words">
+        <div className="mb-5 break-words sm:w-3/5">
           <h5 className="font-bold">Descripsi Program</h5>
           <div dangerouslySetInnerHTML={{ __html: summary }}></div>
         </div>
-        <div className="mb-5 w-2/5 break-words">
+        <div className="mb-5 break-words sm:w-2/5">
           <div>
             <h5 className="font-bold">Tujuan</h5>
             <div dangerouslySetInnerHTML={{ __html: tujuan }}></div>
@@ -36,7 +36,7 @@ const ProgramContent = ({
             </button>
           </Link>
         </div>
-        <div className="mb-5 w-2/5 break-words">
+        <div className="mb-5 break-words sm:w-2/5">
           <h5 className="font-bold">Indikator Keberhasilan</h5>
           <div dangerouslySetInnerHTML={{ __html: pencapaian }}></div>
         </div>
