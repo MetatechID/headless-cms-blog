@@ -7,15 +7,14 @@ import ProgramContent from "@/components/ProgramContent";
 const Program = ({ items = null }) => {
   let contentTabs = items !== null ? items.data : [];
 
+  // console.log(contentTabs);
+
   const tabs = contentTabs.map((item, idx) => {
-    let images = item.attributes.imageThumbnails.map((image, idx) => {
-      return {
-        alt: image.alt,
-        src: `${config.api}${image.thumbnail.data ? image.thumbnail.data.attributes.url : "#"}`,
-        isFeatured: image.isFeatured,
-        className: image.isFeatured ? "md:col-span-2" : "col-span-1",
-      };
-    });
+    let image = {
+      alt: item.attributes.imageThumbnails.alt,
+      src: `${config.api}${item.attributes.imageThumbnails ? item.attributes.imageThumbnails.thumbnail.data.attributes.url : "#"}`,
+      className: "",
+    };
 
     return {
       title: item.attributes.tag,
@@ -26,7 +25,7 @@ const Program = ({ items = null }) => {
           summary={item.attributes.summary}
           tujuan={item.attributes.tujuan}
           pencapaian={item.attributes.pencapaian}
-          images={images}
+          images={image}
           slug={item.attributes.slug}
         />
       ),
@@ -36,7 +35,7 @@ const Program = ({ items = null }) => {
   return (
     <section
       id="program"
-      className="container mb-28 bg-[url(/triangle-top-right.svg)] text-center sm:mb-40"
+      className="container bg-[url(/triangle-top-right.svg)] text-center"
       style={{
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top right",

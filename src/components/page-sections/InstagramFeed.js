@@ -2,11 +2,12 @@
 import React from "react";
 import SectionHeading from "@/components/SectionHeading";
 import Instagramlayout from "@/components/InstagramLayout";
+import VideoLayout from "@/components/VideoLayout";
 
-const InstagramFeed = ({ items }) => {
+const InstagramFeed = ({ items, videoFeed }) => {
   return (
     <section id="igFeed">
-      <SectionHeading className="flex justify-between">
+      <SectionHeading className="flex justify-between gap-4">
         <div>
           ikuti <span className="text-primaryBlueColor">Rama</span>
         </div>
@@ -37,6 +38,10 @@ const InstagramFeed = ({ items }) => {
         </div>
       </SectionHeading>
       <Instagramlayout items={items} />
+      <div className="mx-5 py-5 text-2xl text-black sm:mx-28">
+        <h2>Podcast & Video</h2>
+      </div>
+      <VideoLayout items={videoFeed} />
     </section>
   );
 };

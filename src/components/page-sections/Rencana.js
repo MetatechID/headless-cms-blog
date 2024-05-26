@@ -28,13 +28,13 @@ const Rencana = ({ items = null }) => {
 
         <p className="text-base font-normal">{planSummary}</p>
       </div>
-      <div className=" flex flex-col items-center justify-center sm:flex-row">
-        <div className="flex-1 p-4 ">
+      <div className="flex flex-col items-center justify-center">
+        <div className="flex w-full flex-col p-4 sm:flex-row">
           {contentLeft.length > 0 &&
             contentLeft.map((item, idx) => (
               <div
                 key={`content-${idx}`}
-                className="mx-5 flex flex-row py-10 text-left"
+                className="mx-5 flex flex-row py-5 text-left sm:w-1/3 sm:py-10"
               >
                 <div className="mr-4 flex-shrink-0 sm:w-16">
                   <Image
@@ -50,35 +50,12 @@ const Rencana = ({ items = null }) => {
               </div>
             ))}
         </div>
-
-        <div className="order-first h-auto flex-none p-4 sm:order-none sm:w-[35rem]">
+        <div className="mb-10 flex h-auto items-center p-4 sm:w-[35rem]">
           <img
             src={`${config.api}${mediaContent?.data?.attributes.url}`}
             alt="Image"
             className="h-auto max-w-full"
           />
-        </div>
-
-        <div className=" flex-1 p-4">
-          {contentRight.length > 0 &&
-            contentRight.map((item, idx) => (
-              <div
-                key={`content-${idx}`}
-                className="mx-5 flex flex-row py-10 text-left"
-              >
-                <div className="mr-4 flex-shrink-0 sm:w-16">
-                  <Image
-                    width={63}
-                    height={63}
-                    src={`${config.api}${item.icon.data.attributes.url}`}
-                    alt="icon"
-                  />
-                </div>
-                <div>
-                  <p className="text-systemGrey">{item.summary}</p>
-                </div>
-              </div>
-            ))}
         </div>
       </div>
     </section>

@@ -50,6 +50,13 @@ const CardProfile = ({
           >
             {!isHtml ? <p>{summary}</p> : null}
           </CardItem>
+          <Image
+            className="float-right grid"
+            src={"/sign.png"}
+            width={300}
+            height={250}
+            alt="sign"
+          />
         </div>
       </CardBody>
     </CardContainer>

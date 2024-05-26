@@ -25,18 +25,18 @@ const Home = async () => {
   );
   const testimonies = await fetchData("/api/testimonies?populate=*");
   const igData = await fetchIgData();
+  const videoFeed = await fetchData("/api/video-feeds?populate=*");
 
   return (
     <main className="container flex flex-col items-center">
       <Suspense fallback={<>Loading...</>}>
         <MainBanner items={imagesMainBanner} />
         <WelcomeMsg />
-        {/* <SectionDivider /> */}
         <About items={profile} />
         <Achievement items={achievement} />
         <Rencana items={plan} />
         <Program items={cardsData} />
-        <InstagramFeed items={igData} />
+        <InstagramFeed items={igData} videoFeed={videoFeed} />
         <Testimony items={testimonies} />
       </Suspense>
     </main>

@@ -10,7 +10,7 @@ export const ImagesSlider = ({
   overlayClassName,
   className,
   autoplay = true,
-  direction = "up",
+  direction = "right",
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -88,18 +88,19 @@ export const ImagesSlider = ({
       transition: {
         duration: 0.5,
         ease: [0.645, 0.045, 0.355, 1.0],
+        // ease: "easeIn",
       },
     },
-    upExit: {
+    leftExit: {
       opacity: 1,
-      y: "-150%",
+      x: "-150%",
       transition: {
         duration: 1,
       },
     },
-    downExit: {
+    rightExit: {
       opacity: 1,
-      y: "150%",
+      x: "150%",
       transition: {
         duration: 1,
       },
@@ -136,7 +137,7 @@ export const ImagesSlider = ({
               src={loadedImages[currentIndex]}
               initial="initial"
               animate="visible"
-              exit={direction === "up" ? "upExit" : "downExit"}
+              exit={direction === "right" ? "rightExit" : "leftExit"}
               variants={slideVariants}
               className="image absolute inset-0 aspect-square h-auto w-full object-contain sm:object-top"
               alt="rama-banner"
