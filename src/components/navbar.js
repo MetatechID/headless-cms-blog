@@ -99,6 +99,7 @@ const Navbar = ({ className, menu }) => {
                 item={item.name}
                 isSubMenu={item.subMenu ? true : false}
                 href={item.href}
+                openNewTab={item.openNewTab}
               >
                 {item.subMenu
                   ? item.subMenu.map((subItem, subIdx) => {

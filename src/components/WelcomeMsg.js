@@ -45,46 +45,33 @@ const WelcomeMsg = () => {
           </svg>
           <span className="sr-only">Close modal</span>
         </button>
-        <div className="relative rounded-lg bg-primaryBlueColor/80 bg-[url(/bg-modal.jpg)] bg-cover bg-center bg-blend-soft-light shadow">
-          <div className="flex items-center justify-between rounded-t p-4 dark:border-gray-600 md:p-5">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-              Welcome Sahabat Rama
-            </h3>
-            <Image
-              src="/logo-warna.png"
-              width={222}
-              height={93}
-              style={{ objectFit: "contain" }}
-              alt="rama logo with color"
-            />
+        {/* <div className="relative rounded-lg bg-primaryBlueColor/95 bg-[url(/bg-modal_2.jpg)] bg-cover bg-clip-content bg-center bg-blend-multiply shadow"> */}
+        <div className="relative rounded-lg bg-primaryBlueColor/95 bg-opacity-45 bg-[url(/bg-modal_2.jpg)] bg-cover bg-center bg-blend-saturation mix-blend-hard-light shadow">
+          <div className="flex items-center justify-between rounded-lg dark:border-gray-600">
+            <div className="w-full">
+              <Image
+                src="/header-welcome.png"
+                alt="welcome"
+                width={500}
+                height={200}
+                className="w-full rounded-t-lg"
+              />
+            </div>
           </div>
           {/* Modal body */}
-          <div className="flex flex-col gap-4 space-y-4 p-4 sm:flex-row md:p-5">
-            <div className="basis-3/5">
-              <p className="text-base leading-relaxed text-systemGrey">
-                As a young entrepreneur driven by a passion for empowerment, I
-                founded company with a clear mission: to cultivate a culture of
-                excellence, innovation, and inclusivity. My leadership
-                philosophy is anchored in empathy, integrity, and vision, aiming
-                to inspire and mentor others to reach their full potential.
-                Berani Maju dengan nurani - untuk diri sendiri, bisnis,
-                komunitas ,dan bangsa Indonesia - bersama HIPMI Jaya
-              </p>
-            </div>
-            <div className="flex basis-2/5 flex-wrap content-between">
-              {/* <div className="flex w-full flex-col gap-12"> */}
-              <Image src="/sign.png" width={500} height={500} alt="rama-sign" />
-              <div>
-                <p className="text-lg font-bold">
-                  SUPPORT & PARTICIPATION FORM
-                </p>
+          <div className="relative flex flex-col gap-4 space-y-4 p-4 sm:flex-row md:p-5">
+            <div className="absolute inset-0 rounded-lg bg-primaryBlueColor bg-opacity-75"></div>
+            <div className="z-50 flex w-full flex-col items-center gap-2">
+              <p className="grid px-2 text-base leading-relaxed text-white">
+                Kami butuh kontribusi dan keterlibatan kalian; beri manfaat
+                lebih melalui, Jaya Berani Maju
                 <button
                   type="button"
                   onClick={(e) => {
                     // e.preventDefault();
                     window.open("http://bit.ly/jayaberanimaju", "_blank");
                   }}
-                  className="flex flex-row rounded-md bg-white p-1 text-center text-base text-black"
+                  className="my-4 flex w-fit flex-row justify-self-center rounded-md bg-white p-1 text-center text-base text-black"
                 >
                   <svg
                     width="24"
@@ -100,39 +87,12 @@ const WelcomeMsg = () => {
                   </svg>
                   <span>KLIK #JAYABERANIMAJU</span>
                 </button>
-              </div>
-              {/* </div> */}
+                Berani Maju dengan nurani - untuk diri sendiri, bisnis,
+                komunitas ,dan bangsa Indonesia - bersama HIPMI Jaya
+              </p>
             </div>
           </div>
           {/* Modal footer */}
-          <div className="flex items-center rounded-b border-t border-gray-200 p-4 dark:border-gray-600 md:p-5">
-            <Image
-              src={"/modal-footer.png"}
-              width={1000}
-              height={500}
-              style={{ objectFit: "cover" }}
-              alt="berani maju footer"
-            />
-            {/* <button
-              onClick={() => {
-                window.open("http://bit.ly/jayaberanimaju", "_blank");
-                setShow(false);
-              }}
-              data-modal-hide="default-modal"
-              type="button"
-              className="rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Register
-            </button>
-            <button
-              onClick={() => setShow(false)}
-              data-modal-hide="default-modal"
-              type="button"
-              className="ms-3 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
-            >
-              Close
-            </button> */}
-          </div>
         </div>
       </div>
     </div>

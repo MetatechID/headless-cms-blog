@@ -54,6 +54,7 @@ const Achievement = ({ items }) => {
                     fontSize: "1.5rem",
                   }}
                   date={item.attributes.year}
+                  dateClassName="text-black"
                 >
                   <h3 className="font-semibold capitalize">
                     {item.attributes.title}

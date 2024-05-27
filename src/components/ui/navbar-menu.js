@@ -20,10 +20,11 @@ export const MenuItem = ({
   children,
   isSubMenu,
   href = "#",
+  openNewTab = false,
 }) => {
   return (
     <div onMouseEnter={() => setActive(item)} className="relative ">
-      <HoveredLink href={href}>
+      <HoveredLink openNewTab={openNewTab} href={href}>
         <motion.p
           transition={{ duration: 0.3 }}
           className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
@@ -114,11 +115,12 @@ export const ProductItem = ({
   );
 };
 
-export const HoveredLink = ({ children, ...rest }) => {
+export const HoveredLink = ({ children, openNewTab, ...rest }) => {
   return (
     <Link
       {...rest}
       className="text-neutral-700 hover:text-black dark:text-neutral-200 "
+      target={openNewTab ? "__blank" : ""}
     >
       {children}
     </Link>

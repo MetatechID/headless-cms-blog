@@ -7,8 +7,6 @@ import ProgramContent from "@/components/ProgramContent";
 const Program = ({ items = null }) => {
   let contentTabs = items !== null ? items.data : [];
 
-  // console.log(contentTabs);
-
   const tabs = contentTabs.map((item, idx) => {
     let image = {
       alt: item.attributes.imageThumbnails.alt,
