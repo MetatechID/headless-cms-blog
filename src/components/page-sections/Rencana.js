@@ -50,7 +50,7 @@ const Rencana = ({ items = null }) => {
               </div>
             ))}
         </div>
-        <div className="mb-10 flex h-auto items-center p-4 sm:w-[35rem]">
+        <div className="mb-10 flex h-auto items-center justify-center p-4 sm:w-[35rem]">
           <img
             src={`${config.api}${mediaContent?.data?.attributes.url}`}
             alt="Image"
