@@ -14,7 +14,7 @@ const BlurImage = ({ card }) => {
       loader={imageLoader}
       alt={card.alt || "ig-feed"}
       blurDataURL="/skeleton-img.svg"
-      className="aspect-video max-h-44 rounded-lg"
+      className="aspect-video max-h-44 rounded-lg object-cover"
     />
   );
 };
