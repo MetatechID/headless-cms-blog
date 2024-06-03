@@ -41,7 +41,7 @@ const Navbar = ({ className, menu }) => {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className={`flex flex-col sm:flex-row ${isOpen ? "flex-col" : ""} items-center justify-between`}
+        className={`flex flex-row ${isOpen ? "flex-col" : ""} items-center justify-between`}
       >
         <div
           className={`flex-shrink-0  sm:w-[14.4375rem] ${showBackground ? "relative hidden bg-black sm:flex" : "hidden h-20 bg-transparent sm:flex sm:h-[8.0625rem]"}`}
@@ -51,13 +51,26 @@ const Navbar = ({ className, menu }) => {
               src={"/logo_2.png"}
               width={116}
               height={80}
-              className="py-3"
+              className="py-3 sm:relative"
               alt="logo_2"
             />
           ) : (
-            <Image width={231} height={129} src={"/logo.svg"} alt="logo" />
+            <Image
+              width={231}
+              height={129}
+              src={"/logo.svg"}
+              alt="logo"
+              className="hidden sm:block"
+            />
           )}
         </div>
+        <Image
+          src={"/logo_2.png"}
+          width={116}
+          height={80}
+          className="px-3 py-3 sm:hidden"
+          alt="logo_2"
+        />
         <div className="block self-end p-3 sm:hidden">
           <button
             className="text-white focus:outline-none"
