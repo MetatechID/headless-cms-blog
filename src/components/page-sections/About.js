@@ -11,9 +11,7 @@ const About = ({ items = null }) => {
       className="container mb-28 scroll-mt-28 bg-[url('/triangle-top-left.svg')] bg-local text-center leading-8 sm:mb-40"
       style={{ backgroundRepeat: "no-repeat" }}
     >
-      <SectionHeading className="mt-10">
-        Tentang <span className="text-primaryBlueColor">Rama</span>
-      </SectionHeading>
+      <SectionHeading className="mt-10"></SectionHeading>
       {items !== null && (
         <CardProfile
           title={items.data.attributes.title}

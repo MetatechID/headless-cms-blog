@@ -9,7 +9,10 @@ const InstagramFeed = ({ items, videoFeed }) => {
     <section id="igFeed">
       <SectionHeading className="flex justify-between gap-4">
         <div>
-          ikuti <span className="text-primaryBlueColor">Rama</span>
+          Social Media
+          <span className="text-systemRed font-bold"> JAYA</span>be
+          <span className="text-systemRed font-bold">RA</span>ni
+          <span className="text-systemRed font-bold">MA</span>ju
         </div>
         <div className="mr-4 sm:mr-28">
           <button

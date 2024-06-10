@@ -1,3 +1,7 @@
+import {
+  IconBrandInstagram,
+  IconBrandYoutubeFilled,
+} from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -24,15 +28,24 @@ const Footer = () => {
           <div className="w-[40%] sm:w-[16.6875rem]">
             <Image src="/logo.svg" width={287} height={161} alt="logo" />
           </div>
-          <Link href={"#"}>
-            <button className=" w-39 flex flex-row items-center justify-center gap-3 rounded-lg bg-primaryBlueColor px-8 py-2 text-sm font-normal text-white transition duration-200 hover:shadow-xl focus:ring-2 focus:ring-blue-400">
-              <img src="/wa.svg" />
-              Sahabat Rama
-            </button>
-          </Link>
-          <p className="text-sm text-greyDark">
+          <div className="flex items-center gap-3">
+            <p className="text-systemGrey">ikuti kami : </p>
+            <Link href="#">
+              <IconBrandInstagram color="black" />
+            </Link>
+            <Link href="#">
+              <IconBrandYoutubeFilled color="#D81D09" />
+            </Link>
+            <Link href="#">
+              <button className="flex flex-row items-center justify-center gap-3 rounded-lg bg-white px-4 py-2 text-sm font-normal text-black transition duration-200 hover:shadow-xl focus:ring-2 focus:ring-blue-400">
+                <img src="/wa.svg" />
+                Support Rama
+              </button>
+            </Link>
+          </div>
+          {/* <p className="text-sm text-greyDark">
             Kritik & saran bisa hubungi nomer ini
-          </p>
+          </p> */}
         </div>
         <div className="flex-1 pt-[0.625rem] text-right lg:mt-[30rem]">
           <p>rama@jayaberanimaju.com </p>

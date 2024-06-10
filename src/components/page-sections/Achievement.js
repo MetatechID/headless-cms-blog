@@ -24,7 +24,7 @@ const Achievement = ({ items }) => {
       }}
     >
       <SectionHeading>
-        <span className="text-we text-primaryBlueColor">Rama</span> sudah pernah
+        <span className="text-we text-primaryBlueColor">Rama</span> Infografik
       </SectionHeading>
       <VerticalTimeline animate={true} lineColor="">
         {items !== null ? (
@@ -37,14 +37,14 @@ const Achievement = ({ items }) => {
               >
                 <VerticalTimelineElement
                   contentStyle={{
-                    backgroundColor: "rgba(43, 57, 141, 0.7)",
+                    backgroundColor: "rgba(43, 57, 141, 1)",
                     boxShadow: "none",
                     textAlign: "left",
                     padding: "1.3rem 2rem",
                     color: "white",
                   }}
                   contentArrowStyle={{
-                    borderRight: "0.4rem solid rgba(43, 57, 141, 0.7)",
+                    borderRight: "0.4rem solid rgba(43, 57, 141, 1)",
                   }}
                   visible={inView}
                   icon={<IconMedal stroke={2} />}

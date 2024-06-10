@@ -39,8 +39,19 @@ const Program = ({ items = null }) => {
         backgroundPosition: "top right",
       }}
     >
-      <SectionHeading>
-        <span className="text-primaryBlueColor">Rama</span> punya Program
+      <SectionHeading className="my-8">
+        <span className="sm:text-systemRed font-bold text-primaryBlueColor">
+          JAYA
+        </span>
+        be
+        <span className="sm:text-systemRed font-bold text-primaryBlueColor">
+          RA
+        </span>
+        ni
+        <span className="sm:text-systemRed font-bold text-primaryBlueColor">
+          MA
+        </span>
+        ju Program
       </SectionHeading>
       <TabsLayout itemTabs={tabs} />
     </section>

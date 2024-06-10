@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { imageLoader } from "@/utils/imageLoader";
+import DynamicTitle from "./ui/DynamicTitle";
 
 const CardProfile = ({
   title,
@@ -15,7 +16,7 @@ const CardProfile = ({
 }) => {
   return (
     <CardContainer className="inter-var h-auto w-[80%]">
-      <CardBody className="group/card relative flex h-auto w-full flex-wrap  gap-10 rounded-xl border border-black/[0.1] bg-gray-50 p-6 dark:border-white/[0.2] dark:bg-black dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]">
+      <CardBody className="group/card relative flex h-auto w-full flex-wrap  gap-10 rounded-xl bg-gray-50 p-6 dark:bg-transparent dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]">
         <div className="max-w-[35rem] flex-auto">
           <CardItem translateZ="100" className="mt-4">
             <Image
@@ -32,26 +33,26 @@ const CardProfile = ({
           <CardItem
             as="p"
             translateZ="60"
-            className="mt-2 max-w-sm text-sm text-neutral-500 dark:text-neutral-300"
+            className="mt-2 max-w-sm text-sm text-neutral-500 dark:text-neutral-500"
           >
             {subTitle}
           </CardItem>
           <CardItem
             translateZ="50"
-            className="text-xl font-bold text-neutral-600 dark:text-white"
+            className="text-xl font-bold text-neutral-600 dark:text-black"
           >
-            {title}
+            <DynamicTitle title={title} />
           </CardItem>
           <CardItem
             as={!isHtml ? "p" : "div"}
             translateZ="60"
-            className="mt-2 max-w-sm text-left text-sm text-neutral-500 dark:text-neutral-300"
+            className="mt-2 max-w-sm text-left text-sm text-neutral-500 dark:text-neutral-500"
             dangerouslySetInnerHTML={{ __html: summary }}
           >
             {!isHtml ? <p>{summary}</p> : null}
           </CardItem>
           <Image
-            className="float-right grid"
+            className="float-right grid bg-transparent"
             src={"/sign.png"}
             width={300}
             height={250}

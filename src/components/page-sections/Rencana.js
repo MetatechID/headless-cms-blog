@@ -12,19 +12,16 @@ const Rencana = ({ items = null }) => {
   return (
     <section
       id="rencana"
-      className="container mx-5 mb-28 scroll-mt-28 bg-[url('/rencana-bg.svg')] bg-local text-center  leading-8 sm:mx-0 sm:mb-40 sm:min-h-[42.75rem]"
+      className="container mx-5 scroll-mt-28 bg-[url('/rencana-bg.svg')] bg-local text-center leading-8 sm:mx-0 sm:min-h-[42.75rem]"
       style={{
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPositionY: "bottom",
       }}
     >
-      <SectionHeading className="mt-5">
-        <span className="text-secondaryBlue">Rencana</span>{" "}
-        <span className="text-white">Rama</span>
-      </SectionHeading>
+      <SectionHeading className="mt-5 !text-white">Visi & Misi</SectionHeading>
       <div className="mx-auto justify-center text-center text-systemGrey sm:max-w-[40rem]">
-        <div className="font-bold capitalize">Visi & Misi</div>
+        <div className=" capitalize text-palleteGreyLight">Rencana Rama</div>
 
         <p className="text-base font-normal">{planSummary}</p>
       </div>
